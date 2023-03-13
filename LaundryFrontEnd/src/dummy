@@ -1,0 +1,122 @@
+const handleLogin =()=>{
+    let sendUser={Email,Pwd}
+
+    console.log(sendUser)
+
+    // axios.post("http://localhost:9501/customers/addcustomer",sendUser)
+    // .then((response)=>{
+    //   console.log(response)
+      // if(response.status === 201){
+      //       console.log('success');
+      //       toast.success('Login successfull!',{
+      //         position: "top-right",
+      //         autoClose: 5000,
+      //         hideProgressBar: false,
+      //         closeOnClick: true,
+      //         pauseOnHover: true,
+      //         draggable: true,
+      //         progress: undefined,
+      //         theme: "colored",
+      //         });
+             sessionStorage.setItem("role","customer")             
+             window.location.replace('/dashboard') 
+            //  setUser("customer")
+      // }
+     
+    // })
+    // .catch((error)=>{
+    //   console.log(error)
+    //    toast.error('Something went wrong, please try again!',{
+    //           position: "top-right",
+    //           autoClose: 5000,
+    //           hideProgressBar: false,
+    //           closeOnClick: true,
+    //           pauseOnHover: true,
+    //           draggable: true,
+    //           progress: undefined,
+    //           theme: "colored",
+    //           });
+
+    // })
+  }
+
+
+  return (
+    <Container>
+        <Row>
+         <Col sm={{size:6,offset:3}}>
+          <Card className='shadow'>
+           <CardHeader>
+            <h3>Enter your details here!</h3>
+           </CardHeader>
+           <CardBody>
+            <Form onSubmit={handleLogin}>
+             <FormGroup>
+               <Label for="customer_emailid">Enter your Email</Label>
+               <Input type='email' required placeholder='email' name="customer_emailid" id='customer_emailid' onChange={(e)=>setEmail(e.target.value)} value={Email}></Input>
+             </FormGroup>
+             <FormGroup>
+               <Label for="customer_password">Enter Password</Label>
+               <Input type='password' required placeholder='password' name="customer_password" id='customer_password' onChange={(e)=>setPwd(e.target.value)} value={Pwd}></Input>
+             </FormGroup>
+            
+             <Container className='text-center'>
+               <Button className='bg-primary' type='submit' >Login</Button>
+               <ToastContainer
+                  position="top-right"
+                  autoClose={4000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                  />
+               {/* <Button className='bg-warning ms-2' type='reset' onClick={this.resetForm}>Reset</Button> */}
+             </Container>
+            </Form>
+           </CardBody>
+          </Card>
+         </Col>
+        </Row>
+       </Container> 
+
+
+    // <div className='container '>
+    //   <div className='row '>
+    //    <div className='col-1 col-sm-2 col-md-3 col-lg-4'></div>
+    //    <div className='col-10 col-sm-8 col-md-6 col-lg-4'>
+    //     <form
+    //           className="container pt-2 border text-center shadow p-3 mt-3 mb-3 bg-muted rounded">
+    //           <h2 className="text-primary fs-1  mb-4">Login</h2>
+
+    //           <div className="form-group">
+                
+    //           </div>
+    //           <div className="form-group my-3">
+    //             <input
+    //               type="password"
+    //               className="form-control text-center"
+    //               name="password"
+    //               placeholder="Password"
+    //               onChange={(e)=>setPwd(e.target.value)}
+    //               value={Pwd}
+    //               required
+    //             />
+    //           </div>
+    //           <div className='form-group text-center'>
+    //               <button
+    //                 className="btn bg-primary text-light mb-3"
+    //                 onClick={handleLogin}
+    //               >
+    //                 LOGIN
+    //               </button>
+    //           </div>
+    //         </form>
+    //       </div>
+    //       <div className='col-1 col-sm-2 col-md-3 col-lg-4'></div>
+    //     </div>
+    //   </div>
+  )
